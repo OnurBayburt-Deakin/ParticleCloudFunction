@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Remote Control LED Lights</title>
+		<script>
+			function redclick(){
+				var url = "https://api.particle.io/v1/devices/e00fce686bb4f9792ee7d5ea/LightUp";
+				var xhr = new XMLHttpRequest();
+				xhr.open("POST", url);
+				xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+				xhr.onreadystatechange = function () {
+				   if (xhr.readyState === 4) {
+					  console.log(xhr.status);
+					  console.log(xhr.responseText);
+				   }};
+				var data = "access_token=3b29a665dc294cd3f81d20c70fc65d83bfacb846&args=red";
+				xhr.send(data);
+				}
+			function greenclick(){
+				var url = "https://api.particle.io/v1/devices/e00fce686bb4f9792ee7d5ea/LightUp";
+				var xhr = new XMLHttpRequest();
+				xhr.open("POST", url);
+				xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+				xhr.onreadystatechange = function () {
+				   if (xhr.readyState === 4) {
+					  console.log(xhr.status);
+					  console.log(xhr.responseText);
+				   }};
+				var data = "access_token=3b29a665dc294cd3f81d20c70fc65d83bfacb846&args=green";
+				xhr.send(data);
+				}
+			function blueclick(){
+				var url = "https://api.particle.io/v1/devices/e00fce686bb4f9792ee7d5ea/LightUp";
+				var xhr = new XMLHttpRequest();
+				xhr.open("POST", url);
+				xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+				xhr.onreadystatechange = function () {
+				   if (xhr.readyState === 4) {
+					  console.log(xhr.status);
+					  console.log(xhr.responseText);
+				   }};
+				var data = "access_token=3b29a665dc294cd3f81d20c70fc65d83bfacb846&args=blue";
+				xhr.send(data);
+				}
+			window.onbeforeunload = closingCode;
+			function closingCode(){
+				var url = "https://api.particle.io/v1/devices/e00fce686bb4f9792ee7d5ea/LightUp";
+				var xhr = new XMLHttpRequest();
+				xhr.open("POST", url);
+				xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+				xhr.onreadystatechange = function () {
+				   if (xhr.readyState === 4) {
+					  console.log(xhr.status);
+					  console.log(xhr.responseText);
+				   }};
+				var data = "access_token=3b29a665dc294cd3f81d20c70fc65d83bfacb846&args=none";
+				xhr.send(data);
+				return null;
+				}
+		</script>
+		<style>
+			.square_btn1{
+			display: inline-block;
+			padding: 0.5em 1em;
+			text-decoration: none;
+			font-size: 34px;
+			background: #FF0000;/*ButtonColor*/
+			color: #000;
+			border-bottom: solid 4px #627295;
+			border-radius: 3px;
+			}
+			.square_btn1:active {/*OnClick*/
+			-ms-transform: translateY(4px);
+			-webkit-transform: translateY(4px);
+			transform: translateY(4px);/*Move down*/
+			box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*Reduce Shadow*/
+			border-bottom: none;
+			}
+			.square_btn2{
+			display: inline-block;
+			padding: 0.5em 1em;
+			text-decoration: none;
+			font-size: 34px;
+			background: #00FF00;/*ButtonColor*/
+			color: #000;
+			border-bottom: solid 4px #627295;
+			border-radius: 3px;
+			}
+			.square_btn2:active {/*OnClick*/
+			-ms-transform: translateY(4px);
+			-webkit-transform: translateY(4px);
+			transform: translateY(4px);/*Move down*/
+			box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*Reduce Shadow*/
+			border-bottom: none;
+			}
+			.square_btn3{
+			display: inline-block;
+			padding: 0.5em 1em;
+			text-decoration: none;
+			font-size: 34px;
+			background: #0000FF;/*ButtonColor*/
+			color: #FFF;
+			border-bottom: solid 4px #627295;
+			border-radius: 3px;
+			}
+			.square_btn3:active {/*OnClick*/
+			-ms-transform: translateY(4px);
+			-webkit-transform: translateY(4px);
+			transform: translateY(4px);/*Move down*/
+			box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*Reduce Shadow*/
+			border-bottom: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div style="text-align: center">
+			<h1>Click to turn on an LED</h1>
+		</div>
+		<div style="text-align: center">
+			<a href="#" class="square_btn1" onclick="redclick()">RED</a>
+			&nbsp;&nbsp;&nbsp;
+			<a href="#" class="square_btn2" onclick="greenclick()">GREEN</a>
+			&nbsp;&nbsp;&nbsp;
+			<a href="#" class="square_btn3" onclick="blueclick()">BLUE</a>
+		</div>
+	</body>
+</html>
