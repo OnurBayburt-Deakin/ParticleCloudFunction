@@ -48,13 +48,13 @@ int LightUp(String colour)
 
 void setup()
 {
-  //Initialise output pins
-  pinMode(led_red, OUTPUT);
-	pinMode(led_green, OUTPUT);
-	pinMode(led_blue, OUTPUT);
+    //Initialise output pins
+    pinMode(led_red, OUTPUT);
+    pinMode(led_green, OUTPUT);
+    pinMode(led_blue, OUTPUT);
 	
-	//Expose function to cloud
-	Particle.function("LightUp", LightUp);
+    //Expose function to cloud
+    Particle.function("LightUp", LightUp);
 }
 
 
